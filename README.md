@@ -5,6 +5,6 @@ there are some auxillary functions in the main code notebook help to visualize t
 It is important to set the dataroot of the Nuscenes database correctly in line 4 of file lidar_utils.py.<br/>
 
 ![t](https://user-images.githubusercontent.com/56690379/160300769-2abe9afd-2825-4018-917a-e9ca7221df91.png)
-here is an example image shows the occupancy grid of scene1, the grid needs more processing to eliminate the moving objects, the road surface and the vehicle body< the latter two issues can be solved easily by taking z theshold w.r.t lidar frame to ignore the detections from the road surface, and x,y threshold  w.r.t lidar frame to eliminate the detections of the vehicle body,
+here is an example image shows the occupancy grid of scene1, the grid needs further processing to eliminate the moving objects, the road surface and the vehicle body< the latter two issues can be solved easily by taking z theshold w.r.t lidar frame to ignore the detections from the road surface, and x,y threshold  w.r.t lidar frame to eliminate the detections of the vehicle body,
 
 ![occupancy](https://user-images.githubusercontent.com/56690379/160300891-6601bf59-2c05-455a-85ad-ad795d212084.jpg)

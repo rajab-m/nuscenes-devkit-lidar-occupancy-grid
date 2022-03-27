@@ -1,4 +1,4 @@
-In this project we used of Nuscenes database to implement an occupancy grid usig Lidar points cloud.
+In this project we used of Nuscenes database to implement an occupancy grid usig Lidar points cloud.<br/>
 the data used in this project is the mini version of the full dataset (which contains 10 scenes) and can be downloaded from https://www.nuscenes.org/nuscenes#download
 the main code is called occupancy_grid_lidar.ipynb and located in the tutorial folder "nuscenes-devkit-lidar-occupancy-grid/python-sdk/tutorials/", and there is another python class for lidar utils can be found in the same location.
 there are some auxillary functions in the main code notebook help to visualize the data which  you are working on.

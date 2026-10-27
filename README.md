@@ -59,4 +59,4 @@ The grid resolution, filtering thresholds, and sensor model probabilities can be
 - [Bresenham's Line Algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm)
 
 
-![occupancy](https://user-images.githubusercontent.com/56690379/160300891-6601bf59-2c05-455a-85ad-ad795d212084.jpg)
+![Description of image](occupancy-grid.png)

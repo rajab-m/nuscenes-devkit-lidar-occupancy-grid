@@ -1,0 +1,6 @@
+
+nuscenes-devkit
+numpy
+matplotlib
+pyquaternion
+bresenham

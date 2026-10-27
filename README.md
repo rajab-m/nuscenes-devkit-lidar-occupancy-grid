@@ -1,14 +1,62 @@
-Authors:
-- Rajab Murtaja
-- Anas Abu Lehia
-  
-In this project we used Nuscenes database to implement an occupancy grid usig Lidar points cloud.<br/>
-the data used in this project is the mini version of the full dataset (which contains 10 scenes) and can be downloaded from https://www.nuscenes.org/nuscenes#download <br/>
-the main code is called occupancy_grid_lidar.ipynb and located in the tutorial folder "/python-sdk/tutorials/", and there is another python class for lidar utils can be found in the same location.<br/>
-there are some auxillary functions in the main code notebook help to visualize the data which  you are working on.<br/>
-It is important to set the dataroot of the Nuscenes database correctly in line 4 of file lidar_utils.py.<br/>
+# LiDAR Occupancy Grid Mapping
 
-![t](https://user-images.githubusercontent.com/56690379/160300769-2abe9afd-2825-4018-917a-e9ca7221df91.png)
-here is an example image shows the occupancy grid (global grid) of scene1, the grid needs further processing to eliminate the moving objects, the road surface and the vehicle body. the latter two issues can be solved easily by taking z theshold w.r.t lidar frame to ignore the detections from the road surface, and x,y threshold  w.r.t lidar frame to eliminate the detections of the vehicle body,
+A Python project for generating 2D occupancy grids from LiDAR data in the [nuScenes dataset](https://www.nuscenes.org/nuscenes).
+
+## Features
+
+- Load LiDAR point clouds using the nuScenes devkit.
+- Transform points into world coordinates.
+- Filter point clouds using height and distance thresholds.
+- Build occupancy grids using log-odds updates.
+- Use Bresenham's algorithm for ray tracing.
+- Visualize the resulting maps with Matplotlib.
+
+## Requirements
+
+```bash
+pip install nuscenes-devkit numpy matplotlib pyquaternion bresenham
+```
+
+## Dataset Setup
+
+Download the nuScenes dataset and set the dataset path in your configuration:
+
+```python
+from nuscenes.nuscenes import NuScenes
+
+nusc = NuScenes(
+    version="v1.0-mini",
+    dataroot="/path/to/nuscenes",
+    verbose=True
+)
+```
+
+## Usage
+
+Configure the scene and processing mode in the main script:
+
+```python
+SCENE_NUMBER = 1
+SAMPLE_NUMBER = 0
+MODE = "scene"  # "scene" or "sample"
+```
+
+Run the Notebook:
+
+```bash
+occupancy_grid_lidar.ipynp
+```
+
+The occupancy grid is displayed using Matplotlib.
+
+## Notes
+
+The grid resolution, filtering thresholds, and sensor model probabilities can be adjusted in the code. Ground removal currently uses simple threshold filtering and may require improvement for more accurate maps.
+
+## References
+
+- [nuScenes Devkit](https://github.com/nutonomy/nuscenes-devkit)
+- [Bresenham's Line Algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm)
+
 
 ![occupancy](https://user-images.githubusercontent.com/56690379/160300891-6601bf59-2c05-455a-85ad-ad795d212084.jpg)
